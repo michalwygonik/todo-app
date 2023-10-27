@@ -14,10 +14,10 @@ export const Heroes = () => {
         </div>
         <div className="relative h-[400px] w-[400px] hidden md:block">
           <Image
-            src="/reading.png"
+            src="/todo.png"
             fill
-            className="object-contain"
-            alt="Reading"
+            className="object-contain p-16"
+            alt="Todo"
           />
         </div>
       </div>

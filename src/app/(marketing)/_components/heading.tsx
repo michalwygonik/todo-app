@@ -16,7 +16,7 @@ export const Heading = () => {
         Your Tasks, Ideas, Documents & Plans. Welcome to{" "}
         <span className="underline">Todo App</span>
       </h2>
-      <h3 className="tex-base sm:text-xl md:text-2xl font-medium">
+      <h3 className="text-base py-4 sm:text-xl md:text-2xl font-medium">
         Todo App is the place where you can quickly and easily organize your
         daily tasks
       </h3>

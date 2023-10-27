@@ -3,9 +3,13 @@ import { Spinner } from "@/components/spinner";
 import { useConvexAuth } from "convex/react";
 import { redirect } from "next/navigation";
 import Navigation from "./_components/navigation";
+import { useMediaQuery } from "usehooks-ts";
+import { cn } from "@/lib/utils";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, isLoading } = useConvexAuth();
+
+  const isMobile = useMediaQuery("(max-width:768px");
 
   if (isLoading)
     <div className="h-full flex items-center justify-center">
@@ -17,7 +21,12 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="h-full flex">
       <Navigation />
-      <main className="flex-1 h-full -ml-8 rounded-l-[32px] overflow-y-auto">
+      <main
+        className={cn(
+          "flex-1 h-full -ml-8 rounded-l-[32px] overflow-y-auto z-10",
+          isMobile && "rounded-l-0 ml-0"
+        )}
+      >
         {children}
       </main>
     </div>

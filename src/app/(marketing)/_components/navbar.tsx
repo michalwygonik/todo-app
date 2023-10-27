@@ -15,7 +15,7 @@ export const Navbar = () => {
   return (
     <div
       className={cn(
-        "z-50 bg-slate-100 fixed top-0 flex items-center w-full p-6",
+        "z-50 bg-slate-50 fixed top-0 flex items-center w-full p-6",
         scrolled && "border-b shadow-sm"
       )}
     >
