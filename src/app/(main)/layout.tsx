@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import Navigation from "./_components/navigation";
 import { useMediaQuery } from "usehooks-ts";
 import { cn } from "@/lib/utils";
+import { Header } from "./_components/header";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -21,12 +22,14 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="h-full flex">
       <Navigation />
+
       <main
         className={cn(
-          "flex-1 h-full -ml-8 rounded-l-[32px] overflow-y-auto z-10",
+          "flex-1  -ml-8 rounded-l-[32px] overflow-y-auto z-10",
           isMobile && "rounded-l-0 ml-0"
         )}
       >
+        <Header />
         {children}
       </main>
     </div>
