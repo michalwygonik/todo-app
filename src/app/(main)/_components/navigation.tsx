@@ -1,12 +1,21 @@
 "use client";
 
-import { ChevronsLeft, MenuIcon } from "lucide-react";
+import {
+  BarChart3Icon,
+  ChevronsLeft,
+  FoldersIcon,
+  ListTodoIcon,
+  MenuIcon,
+  StickyNoteIcon,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const Navigation = () => {
   const pathname = usePathname();
@@ -67,7 +76,7 @@ export const Navigation = () => {
       <aside
         ref={sidebarRef}
         className={cn(
-          "group/sidebar h-full bg-olive overflow-y-auto pr-8 relative w-40 ",
+          "group/sidebar h-full bg-olive overflow-y-auto pr-12 relative w-40 ",
           isResetting && "transition-all ease-in-out duration-300",
           isMobile && "w-0"
         )}
@@ -88,6 +97,56 @@ export const Navigation = () => {
 
         <div className="flex mx-auto mt-5 w-16 h-16 p-3 rounded-full bg-background justify-center ">
           <Image src="/logo.png" width="100" height="100" alt="logo" />
+        </div>
+        <div className="flex flex-col justify-center items-center my-24 lg:my-32 gap-6 lg:gap-12">
+          <Button
+            variant="ghost"
+            className="hover:bg-transparent hover:scale-105 transition-all duration-200 lg:hover:scale-110"
+          >
+            <Link
+              href="/recent-tasks"
+              className="flex justify-center items-center text-white text-2xl"
+            >
+              <ListTodoIcon size={35} className="mx-4" />
+              {isMobile && <span>Recent Tasks</span>}
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            className="hover:bg-transparent hover:scale-105 transition-all duration-200 lg:hover:scale-110"
+          >
+            <Link
+              href="/notes"
+              className="flex  items-center text-white text-2xl"
+            >
+              <StickyNoteIcon size={35} className="mx-4" />
+              {isMobile && <span>Notes</span>}
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            className="hover:bg-transparent hover:scale-105 transition-all duration-200 lg:hover:scale-110"
+          >
+            <Link
+              href="/folders"
+              className="flex  items-center text-white text-2xl"
+            >
+              <FoldersIcon size={35} className="mx-4" />
+              {isMobile && <span>Folders</span>}
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            className="hover:bg-transparent hover:scale-105 transition-all duration-200 lg:hover:scale-110"
+          >
+            <Link
+              href="/statistic"
+              className="flex  items-center text-white text-2xl"
+            >
+              <BarChart3Icon size={35} className="mx-4" />
+              {isMobile && <span>Statistic</span>}
+            </Link>
+          </Button>
         </div>
       </aside>
       <div
