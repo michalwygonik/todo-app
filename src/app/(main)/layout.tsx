@@ -1,7 +1,7 @@
 "use client";
 import { Spinner } from "@/components/spinner";
 import { useConvexAuth } from "convex/react";
-import { redirect } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 import Navigation from "./_components/navigation";
 import { useMediaQuery } from "usehooks-ts";
 import { cn } from "@/lib/utils";
@@ -19,6 +19,8 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 
   if (!isAuthenticated) redirect("/");
 
+  const pathname = usePathname();
+
   return (
     <div className="h-full flex">
       <Navigation />
@@ -30,6 +32,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         )}
       >
         <Header />
+
         {children}
       </main>
     </div>

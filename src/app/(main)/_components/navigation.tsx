@@ -96,7 +96,9 @@ export const Navigation = () => {
         )}
 
         <div className="flex mx-auto mt-5 w-16 h-16 p-3 rounded-full bg-background justify-center ">
-          <Image src="/logo.png" width="100" height="100" alt="logo" />
+          <Link href="/dashboard">
+            <Image src="/logo.png" width="100" height="100" alt="logo" />
+          </Link>
         </div>
         <div className="flex flex-col justify-center items-center my-24 lg:my-32 gap-6 lg:gap-12">
           <Button

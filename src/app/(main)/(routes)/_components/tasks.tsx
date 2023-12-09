@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-export const RecentTasks = () => {
+export const Tasks = () => {
   return (
     <div>
       <div className="flex justify-between items-center m-2">
-        <h3 className="mx-2 font-semibold text-lg">Recent Tasks</h3>
+        <h3 className="mx-2 font-semibold text-lg">Tasks</h3>
         <Button className="bg-transparent text-olive hover:bg-transparent hover:scale-105 lg:hover:scale-110 transition-all duration-200">
           <Link
-            href="/recent-tasks"
+            href="/tasks"
             className="flex items-center justify-center lg:text-base"
           >
             All <ChevronRight height={20} />
