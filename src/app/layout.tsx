@@ -6,7 +6,7 @@ import { ConvexClientProvider } from "@/components/providers/convex-provider";
 
 export const metadata: Metadata = {
   title: "Todo - app",
-  icons: { icon: "/logo.png" },
+  icons: { icon: { url: "/logo.png", href: "/logo.png" } },
 };
 
 const roboto = Roboto({

@@ -1,10 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useQuery } from "convex/react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { api } from "../../../../../convex/_generated/api";
 
 export const Tasks = () => {
+  const todos = useQuery(api.todos.get);
+
   return (
     <div>
       <div className="flex justify-between items-center m-2">
@@ -19,11 +23,12 @@ export const Tasks = () => {
         </Button>
       </div>
       <div className="">
-        <div>#1</div>
-        <div>#2</div>
-        <div>#3</div>
-        <div>#4</div>
-        <div>#5</div>
+        Recent tasks
+        <ul>
+          {todos?.map((todo) => (
+            <li key={todo._id}>{todo.content}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
