@@ -13,6 +13,7 @@ export const create = mutation({
 
     const todo = await ctx.db.insert("todos", {
       content: args.content,
+      completed: false,
     });
     return todo;
   },
@@ -24,6 +25,17 @@ export const get = query({
     if (!identity) throw new Error("Not authenticated");
 
     const todos = await ctx.db.query("todos").collect();
+
+    return todos;
+  },
+});
+
+export const getRecentTasks = query({
+  handler: async (ctx) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) throw new Error("Not authenticated");
+
+    const todos = await ctx.db.query("todos").order("desc").take(5);
 
     return todos;
   },

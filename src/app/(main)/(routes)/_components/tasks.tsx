@@ -5,9 +5,10 @@ import { useQuery } from "convex/react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { api } from "../../../../../convex/_generated/api";
+import Task from "./task";
 
 export const Tasks = () => {
-  const todos = useQuery(api.todos.get);
+  const todos = useQuery(api.todos.getRecentTasks);
 
   return (
     <div>
@@ -22,11 +23,11 @@ export const Tasks = () => {
           </Link>
         </Button>
       </div>
-      <div className="">
+      <div className="text-md text-left px-5 text-slate-800">
         Recent tasks
         <ul>
           {todos?.map((todo) => (
-            <li key={todo._id}>{todo.content}</li>
+            <Task key={todo._id} todo={todo} />
           ))}
         </ul>
       </div>

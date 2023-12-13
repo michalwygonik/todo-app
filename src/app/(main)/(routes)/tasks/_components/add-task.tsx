@@ -6,6 +6,7 @@ import { api } from "../../../../../../convex/_generated/api";
 import { useState } from "react";
 const AddTask = () => {
   const [content, setContent] = useState("");
+  const [completed, setCompleted] = useState(false);
   const create = useMutation(api.todos.create);
 
   const onCreate = () => {
