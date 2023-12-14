@@ -8,15 +8,19 @@ const Task = (props: any) => {
   return (
     <li className="p-2">
       {todo.completed ? (
-        <>
-          <CheckSquare className="float-left p-1 mr-1 text-slate-500" />
-          <span className="line-through text-slate-400">{todo.content}</span>
-        </>
+        <div className="flex justify-between">
+          <CheckSquare className=" p-1 mr-1 text-slate-500" />
+          <span className="line-through text-slate-400 w-5/6">
+            {todo.content}
+          </span>
+          <span>Today</span>
+        </div>
       ) : (
-        <>
-          <Square className="float-left p-1 mr-1" />
-          <span>{todo.content}</span>
-        </>
+        <div className="flex justify-between">
+          <Square className="p-1 mr-1" />
+          <span className="w-5/6">{todo.content}</span>
+          <span>Today</span>
+        </div>
       )}
 
       <hr />

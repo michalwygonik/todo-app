@@ -24,7 +24,7 @@ export const get = query({
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) throw new Error("Not authenticated");
 
-    const todos = await ctx.db.query("todos").collect();
+    const todos = await ctx.db.query("todos").order("desc").collect();
 
     return todos;
   },
