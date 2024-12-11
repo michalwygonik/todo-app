@@ -106,7 +106,7 @@ export const Navigation = () => {
             className="hover:bg-transparent hover:scale-105 transition-all duration-200 lg:hover:scale-110"
           >
             <Link
-              href="/recent-tasks"
+              href="/tasks"
               className="flex justify-center items-center text-white text-2xl"
             >
               <ListTodoIcon size={35} className="mx-4" />
