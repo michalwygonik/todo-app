@@ -40,3 +40,17 @@ export const getRecentTasks = query({
     return todos;
   },
 });
+
+export const changeCompleted = mutation({
+  args: { id: v.id("todos"), completed: v.boolean() },
+  handler: async (ctx, { id, completed }) => {
+    await ctx.db.patch(id, { completed });
+  },
+});
+
+export const deleteTask = mutation({
+  args: { id: v.id("todos") },
+  handler: async (ctx, args) => {
+    await ctx.db.delete(args.id);
+  },
+});
