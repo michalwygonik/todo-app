@@ -11,9 +11,7 @@ export const Timeline = () => {
         <h3 className="mx-2 font-semibold text-lg">Timeline</h3>
       </div>
       <div className="">
-        <div>#1</div>
-        <div>#2</div>
-        <div>#3</div>
+        <span>timeline</span>
       </div>
     </div>
   );

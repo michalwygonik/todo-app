@@ -15,13 +15,13 @@ const DashboardPage = () => {
         <div className="w-full h-full lg:row-span-2 bg-white shadow-2xl shadow-zinc-300 rounded-[32px]">
           <Folders />
         </div>
-        <div className="w-full h-full lg:row-span-3 bg-white shadow-2xl shadow-zinc-300  rounded-[32px]">
+        <div className="w-full h-full lg:row-span-4 bg-white shadow-2xl shadow-zinc-300  rounded-[32px]">
           <Calendar />
         </div>
         <div className="w-full h-full lg:row-span-4 bg-white shadow-2xl shadow-zinc-300  rounded-[32px]">
           <Notes />
         </div>
-        <div className="w-full h-full md:row-span-2 lg:row-span-3 bg-white shadow-2xl shadow-zinc-300  rounded-[32px]">
+        <div className="w-full h-full md:row-span-2 lg:row-span-2 bg-white shadow-2xl shadow-zinc-300  rounded-[32px]">
           <Timeline />
         </div>
         <div className="w-full h-full lg:row-span-2 bg-white shadow-2xl shadow-zinc-300  rounded-[32px]">
