@@ -27,9 +27,9 @@ const Task = (props: any) => {
             onClick={handleDeleteTask}
             cursor={"pointer"}
             size={17}
-            className="-mx-14 mt-1 text-red-500"
+            className="lg:-mx-14 lg:mt-1 m-1 mr-2 text-red-500"
           />
-          <span className="line-through text-slate-400 w-1/2">
+          <span className="line-through text-slate-400 w-1/2 mb-1">
             {todo.content}
           </span>
           <span className="line-through text-slate-400">
@@ -43,7 +43,7 @@ const Task = (props: any) => {
             cursor={"pointer"}
             className="p-1 mr-1"
           />
-          <span className="w-4/6">{todo.content}</span>
+          <span className="w-4/6 text-">{todo.content}</span>
           <FormattedDate timestamp={todo._creationTime} />
         </div>
       )}

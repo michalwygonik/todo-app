@@ -8,13 +8,16 @@ import { api } from "../../../../../convex/_generated/api";
 export const Calendar = () => {
   const todos = useQuery(api.todos.get);
 
-  if (!todos) return console.log("no todos");
+  if (!todos) {
+    console.log("no todos");
+    return null;
+  }
+
   const events = todos.map((todo) => ({
     id: todo._id,
     title: todo.content,
     start: new Date(todo._creationTime).toISOString(),
   }));
-
   return (
     <div>
       <div className="flex justify-between items-center m-2">

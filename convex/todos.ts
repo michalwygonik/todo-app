@@ -35,7 +35,7 @@ export const getRecentTasks = query({
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) throw new Error("Not authenticated");
 
-    const todos = await ctx.db.query("todos").order("desc").take(5);
+    const todos = await ctx.db.query("todos").order("desc").take(7);
 
     return todos;
   },

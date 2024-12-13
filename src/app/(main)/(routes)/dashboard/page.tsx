@@ -1,9 +1,9 @@
-import { Calendar } from "../_components/calendar";
 import { Folders } from "../_components/folders";
 import { Notes } from "../_components/notes";
 import { Tasks } from "../_components/tasks";
 import { Statistic } from "../_components/statistic";
 import { Timeline } from "../_components/timeline";
+import { Calendar } from "../_components/calendar";
 
 const DashboardPage = () => {
   return (
